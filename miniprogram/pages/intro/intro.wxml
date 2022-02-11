@@ -1,0 +1,45 @@
+<!--pages/intro/intro.wxml-->
+<view class="container">
+    <view class="top">
+        
+    </view>
+    <swiper
+        indicator-dots autoplay circular interval="3000" duration="500" class="swpier"
+        style="height: 400rpx;" easing-function="easeOutCubic">
+        <block wx:for="{{swiperPicture}}" wx:key="*this">
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="{{swiperPicture[index].src}}" mode="widthFix"></image>
+                </view>
+            </swiper-item>
+        </block>    
+    </swiper>
+    <view class="bar">
+        <view class="button_icon" bindtap="viewBriefIntro">
+            <image src="../../images/briefIntro.png"></image>
+            <text>龙泉印象</text>
+        </view>
+        <view class="button_icon" bindtap="viewMap">
+            <image src="../../images/map.png"></image>
+            <text>地理位置</text>
+        </view>
+        <view class="button_icon" bindtap="viewHistory">
+            <image src="../../images/history.png"></image>
+            <text>历史文化</text>
+        </view>
+        <view class="button_icon" bindtap="viewGuide">
+            <image src="../../images/guide_in_intro.png"></image>
+            <text>旅游攻略</text>
+        </view>
+    </view>
+    <view class="list_top">
+        <text class="list_title">景区简介</text>
+        <text class="list_subtitle">点击卡片查看简介</text>
+    </view>
+    <scroll-view class="list" id="list" scroll-y bindscroll="scrollList">
+        <view class="content" wx:for="{{introCards}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <introCard item="{{item}}" id="introCard" text="{{index}}"></introCard>
+        </view>
+    </scroll-view>
+    
+</view>

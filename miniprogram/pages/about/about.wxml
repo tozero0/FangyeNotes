@@ -1,0 +1,24 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+    <view class="top">
+        <view class="profile">
+            <image src="../../images/profile.png"></image>
+        </view>
+    </view>
+    <view class="info">
+        <view class="title">口袋里的龙泉</view>
+        <view class="version">v1.0.0</view>
+    </view>
+    <view class="main">
+        <view class="main_title">小程序开发</view>
+        <view class="main_text">浙江大学计算机科学与技术学院赴浙江省丽水市各区县“复踏家乡之路，深挖文化之根”寒假社会实践团</view>
+        <view class="main_title">关联公众号</view>
+        <view class="main_text">
+            <text class="officalAccount" bindtap="handleOfficalAccount">芳野札记</text>
+            <image class="jump_icon" src="../../images/jump.png"  bindtap="handleOfficalAccount" style="display: none;"></image>
+        </view>
+        <view class="main_title">联系邮箱</view>
+        <view class="main_text" bindtap="copyEmail"><text class="email">{{developerEmail}}</text></view>
+    </view>
+    <view class="privacy" bindtap="handlePrivacy" style="display: none;">隐私保护指引</view>
+</view>

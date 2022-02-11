@@ -1,0 +1,51 @@
+
+<swiper autoplay circular class="lunbo">
+  <swiper-item class="fir"> <image mode="widthFix" src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/guide/微信图片_20220127210756.jpg"></image></swiper-item>  
+  <swiper-item class="sec"> <image mode="widthFix" src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/guide/微信图片_20220127210748.jpg"></image></swiper-item> 
+  <swiper-item class="thi"> <image mode="widthFix" src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/guide/微信图片_20220127003256.jpg"></image></swiper-item> 
+</swiper>
+<view class="pingjia"
+wx:for="{{judge}}"
+wx:key="id"
+>
+<text class="name iconfont icon-user"><text>网友</text></text>
+<text class="words">{{item.word}}
+<text class="judge_time">编辑于{{item.time}}</text></text>
+</view>
+<text class="chuxin">------------------------------------</text>
+
+<view class="free_time">
+<text class="free_time_title">开放时间:</text>
+<text class="free_time_state">全天开放</text>
+</view>
+
+<view class="ticket">
+<text class="ticket_title">门票:</text>
+<text class="ticket_state">免费</text>
+</view>
+
+<view class="spotline">
+<text class="title">公共交通</text>
+<ul>
+    <li>
+        <view>龙泉白云岩景区公交线-老人民医院站</view>
+        <text>步行86米到达</text>
+    </li>
+    <li>
+        <view>龙泉6路-公园路口站</view>
+        <text>步行151米到达</text>
+    </li>
+    <li>
+        <view>龙泉1路-新华电影院站</view>
+        <text>步行816米到达</text>
+    </li>
+    <li>
+        <view>龙泉9路-西街站</view>
+        <text>步行244米到达</text>
+    </li>
+    <li>
+        <view>龙泉游2路-九姑山站</view>
+        <text class="last">步行290米到达</text>
+    </li>
+</ul>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "introCard": "../../components/introCard/introCard"
+  },
+  "navigationBarTitleText": "龙泉介绍"
+}

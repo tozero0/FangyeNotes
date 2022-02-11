@@ -1,0 +1,60 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/intro/intro",
+        "pages/user/user",
+        "pages/map/map",
+        "pages/briefIntro/briefIntro",
+        "pages/history/history",
+        "pages/guide/index",
+        "pages/xijie/index",
+        "pages/baoxi/index",
+        "pages/zheda/index",
+        "pages/qingci_museum/index",
+        "pages/mushroom_index/index",
+        "pages/qipanshan/index",
+        "pages/link/link",
+        "pages/about/about",
+        "pages/privacy/privacy",
+        "pages/help/help"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/intro/intro",
+                "iconPath": "images/intro515151.png",
+                "selectedIconPath": "images/intro1296db.png",
+                "text": "龙泉介绍"
+            },
+            {
+                "pagePath": "pages/guide/index",
+                "iconPath": "images/guide515151.png",
+                "selectedIconPath": "images/guide1296db.png",
+                "text": "旅游攻略"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "iconPath": "images/user515151.png",
+                "selectedIconPath": "images/user1296db.png",
+                "text": "用户中心"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "小程序将获取你的位置"
+        }
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

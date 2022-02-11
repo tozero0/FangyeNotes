@@ -1,0 +1,44 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+    <view class="top">
+        <text>龙泉地理位置</text>
+    </view>
+    <view class="map-body">
+        <map 
+            id="longquanLocation"
+            class="map"
+            scale="12"
+            latitude="{{locationLatitude}}"
+            longitude="{{locationLongitude}}"
+            markers="{{longquanMarkers}}"
+            show-location
+            show-compass
+            enable-traffic="{{trafficFlag}}"
+            enable-rotate="{{true}}"
+            enable-satellite="{{satelliteFlag}}"
+        ></map>
+    </view>
+    <view class="switch">
+        <view class="switch_bar">
+            <view class="text">显示实时路况</view>
+            <switch checked="{{trafficFlag}}" bindchange="changeTraffic"></switch>
+        </view>
+        <view class="switch_bar">
+            <view class="text">显示卫星地图</view>
+            <switch checked="{{satelliteFlag}}" bindchange="changeSatellite"></switch>
+        </view>
+    </view>
+    <view class="moveButton">
+        <button type="primary" bindtap="moveToLongquan" plain>定位到龙泉</button>
+        <button type="primary" bindtap="moveToLocation" plain>定位到您的位置</button>
+    </view>
+    <scroll-view class="location_text_body" scroll-y>
+        <view class="location_text_title">
+            <text space="nbsp">    龙泉地理概况\n</text>
+        </view>
+        <view class="location_text">
+            <text user-select space="emsp">  龙泉市位于浙江省西南部的浙闽赣边境，地理坐标北纬27°42'～28°20'，东经118°42'～119°25'，东西宽70.25公里，南北长70.80公里，总面积3059平方公里。\n  东邻温州经济技术开发区，西接武夷山国家级风景旅游区，是浙江省入江西、福建的主要通道，素有“瓯婺八闽通衢”、“译马要道，商旅咽喉”之称，历来为浙、闽、赣毗邻地区商贸重镇。\n  龙泉行政区划：截止2014年，龙泉市辖4个街道、8个镇、7个乡（包括1个民族乡）：龙渊街道、西街街道、剑池街道、塔石街道；八都镇、上垟镇、小梅镇、查田镇、屏南镇、安仁镇、锦溪镇、住龙镇；兰巨乡、宝溪乡、龙南乡、道太乡、岩樟乡、城北乡、竹垟畲族乡。\n  市政府驻贤良路333号。</text>
+        </view>
+    </scroll-view>
+    
+</view>

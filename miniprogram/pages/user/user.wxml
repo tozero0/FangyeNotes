@@ -1,0 +1,54 @@
+<!--pages/user/user.wxml-->
+<view class="bg"></view>
+<view class="container">
+  <view class="top_bg"></view>
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="officalAccountCard" bindtap="handleOfficalAccount">
+    <image class="cardBg" src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/user/user_card.jpg" mode="widthFix"></image>
+    <image class="fangye" src="../../images/fangye.png" mode="widthFix"></image>
+    <view class="officalAccount_text">
+      <!-- 点击前往公众号，开启寻芳探野之旅 -->
+      关注微信公众号，开启寻芳探野之旅
+    </view>
+  </view>
+  <view class="user-item">
+    <view class="box" bindtap="handleHelp">
+      <image class="icon" src="../../images/help.png"></image>
+      <text>使用帮助</text>
+      <image class="right" src="../../images/right707070.png"></image>
+    </view>
+    <button class="share" open-type="share" style="width: {{0.95*screenWidth}}px"></button>
+    <view class="box">
+      <image class="icon" src="../../images/share.png"></image>
+      <text>分享一下</text>
+      <image class="right" src="../../images/right707070.png"></image>
+    </view>
+    <view class="box" bindtap="handleLink">
+      <image class="icon" src="../../images/link.png"></image>
+      <text>常用链接</text>
+      <image class="right" src="../../images/right707070.png"></image>
+    </view>
+    <view class="box" bindtap="handleAbout">
+      <image class="icon" src="../../images/about.png"></image>
+      <text>关于小程序</text>
+      <image class="right" src="../../images/right707070.png"></image>
+    </view>
+    
+  </view>
+</view>

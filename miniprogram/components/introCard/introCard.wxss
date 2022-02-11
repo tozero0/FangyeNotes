@@ -1,0 +1,183 @@
+/* components/introCard/introCard.wxss */
+.container {
+    position: relative;
+    width: 98%;
+    height: 128px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12rpx;
+    left: 70%;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    margin: 8rpx;
+    font-size: 48rpx;
+    bottom: 48rpx;
+    left: 12rpx;
+    font-weight: 540;
+    color: rgb(255, 255, 255);
+    z-index: 8;
+    text-shadow: 2rpx 2rpx 6rpx rgba(0, 0, 0, 0.6)
+}
+
+.subtitle {
+    position: absolute;
+    width: 100%;
+    margin: 8rpx;
+    font-size: 28rpx;
+    bottom: 10rpx;
+    left: 12rpx;
+    font-family: "楷体";
+    color: rgb(255, 255, 255);
+    z-index: 8;
+    text-shadow: 2rpx 2rpx 3rpx rgb(0, 0, 0)
+}
+
+.id_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 8rpx;
+    bottom: 0;
+    left: 66%;
+}
+
+.id {
+    position: absolute;
+    font-size: 200rpx;
+    font-family: "楷体";
+    padding-top: 32rpx;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.753), rgba(255, 255, 255, 0.514), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.bg image {
+    margin: auto;
+    width: 100%;
+}
+
+.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.hide {
+    display: none;
+}
+
+.detail {
+    position: fixed;
+    width: 0;
+    height: 50%;
+    left: 50%;
+    top: 25%;
+    border-radius: 24rpx;
+    background-color: rgb(248, 248, 248);
+    opacity: 0;
+    margin: 0 auto;
+}
+
+.detail_title_container {
+    margin: 16rpx 0 0 32rpx;
+    
+}
+
+.detail_title {
+    font-size: 48rpx;
+    text-shadow: 2rpx 2rpx 4rpx rgb(56, 56, 56);
+}
+
+.detail_subtitle {
+    font-size: 36rpx;
+    padding-left: 32rpx;
+    top: 12rpx;
+    font-weight: 500;
+}
+
+.detail_main {
+    padding: 32rpx 24rpx;
+    position: relative;
+    z-index: 36;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.close image {
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.guide {
+    position: absolute;
+    bottom: 12rpx;
+    left: 0;
+    font-size: 40rpx;
+    color: #fff;
+    display: flex;
+    text-shadow: 1.5rpx 1.5rpx 4rpx rgb(58, 58, 58);
+    padding-right: 24rpx;
+    transform: rotateY(180deg);
+}
+
+.guide text {
+    margin: auto 0;
+}
+
+.guide image {
+    width: 42rpx;
+    height: 42rpx;
+    margin: auto 0;
+    padding-top: 2px;
+}
+
+.detail_bg_container {
+    position: absolute;
+    width: 96%;
+    height: 60%;
+    bottom: 1.8%;
+    overflow: hidden;
+    left: 2%;
+    border-radius: 24rpx;
+    transform: rotateY(180deg);
+}
+
+.detail_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 100%;
+    border-radius: 24rpx;
+    -webkit-box-reflect: below 0 linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 100%);
+}
+
+.detail_bg image {
+    transform: rotate(180deg);
+    vertical-align: top;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

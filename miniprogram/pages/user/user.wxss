@@ -1,0 +1,142 @@
+/* pages/user/user.wxss */
+.bg {
+    position: fixed;
+    width: 100vh;
+    height: 100vh;
+    background-color: rgb(233, 233, 233);
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100rpx 0;
+    box-sizing: border-box;
+    
+}
+
+.top_bg {
+    position: fixed;
+    width: 100%;
+    height: 32%;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 0;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+    z-index: 1;
+}
+  
+.userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.officalAccountCard {
+    position: relative;
+    width: 88%;
+    height: 200rpx;
+    top: 48rpx;
+    border-radius: 28rpx;
+    overflow: hidden;
+    border-width: 12rpx;
+    border-color: rgb(252, 165, 51);
+    box-shadow: 6px 6px 5px #888888;
+}
+
+.cardBg {
+    position: relative;
+    bottom: 80%;
+    width: 100%;
+}
+
+.fangye {
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 10%;
+    z-index: 10;
+}
+
+.officalAccount_text {
+    color: rgb(255, 255, 255);
+    font-size: 32rpx;
+    position: absolute;
+    top: 67%;
+    width: 100%;
+    text-align: center;
+    margin: 12rpx;
+    z-index: 9;
+}
+
+.officalAccountCard::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 28rpx;
+    content: '';
+}
+  
+.user-item {
+    display: flex;
+    position: relative;
+    width: 94%;
+    margin: 3%;
+    top: 100rpx;
+    border-radius: 24rpx;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100rpx;
+    align-items: center;
+    margin-top: 2px;
+    background-color: #fff;
+}
+
+.share {
+    position: absolute;
+    height: 100rpx;
+    top: 106rpx;
+    opacity: 0;
+    z-index: 11;
+}
+
+.box text {
+    position: relative;
+    left: 40rpx;
+    font-size: 36rpx;
+}
+
+.icon {
+    width: 64rpx;
+    height: 64rpx;
+    position: relative;
+    left: 24rpx;
+}
+
+.right {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 32rpx;
+}

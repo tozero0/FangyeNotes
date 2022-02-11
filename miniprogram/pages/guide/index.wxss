@@ -1,0 +1,94 @@
+.contianer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.swiper_container {
+  background-color: rgb(233, 233, 233);
+  position: fixed;
+  width: 100%;
+  height: 400rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+}
+
+.lunbo {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 400rpx;
+}
+.lunbo swiper-item image {
+    width: 100%;
+    position: fixed;
+}
+  .remen {
+    position: fixed;
+    top: 400rpx;
+    width: 100%;
+    padding-left: 48rpx;
+    padding-top: 16rpx;
+    font-size: 48rpx;
+    background-color: #fff;
+    /* margin: 10rpx 12rpx 0rpx 12prx; */
+  }
+  .hotspot {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 900rpx;
+  }
+  .pic {
+      position: relative;
+      width: 50%;
+      height: 300rpx;
+  }
+  .pics {
+    position: absolute;
+    border-radius: 20rpx;
+    left: 50%;
+    margin-left: -174.42rpx;
+    top: 8%;
+    width: calc(750rpx /2.15);
+    height: calc(116.448 * 2rpx);
+    overflow:hidden;
+  }
+  .pics image {
+    /* width: 100%; */
+    scale: 0.9;
+    transform: translate(-40rpx,-40rpx);
+  }
+  .pic text {
+    display: block;
+    margin-top: 255rpx;
+    margin-left: 12rpx;
+  }
+.hotspot .pic:nth-child(4) .pics image{
+  scale: 0.9;
+    transform: translate(-80rpx,-200rpx);
+}
+.hotspot .pic:nth-child(5) .pics image{
+  scale: 0.7;
+    transform: translate(-200rpx,-210rpx);
+}
+
+.item_container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  z-index: -1;
+  height: 1px;
+  flex: 1;
+  top: 485rpx;
+}
+
+.padding {
+  position: relative;
+  height: 500rpx;
+}

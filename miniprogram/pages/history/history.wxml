@@ -1,0 +1,44 @@
+<!--pages/history/history.wxml-->
+<view class="container" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend" style="display: {{flag ? '' : 'none'}};">
+    <view class="first_page">
+        <view class="first_title">历史上的龙泉县</view>
+        <view class="first_text">
+            <text user-select space="emsp">  龙泉县，又称龙源县。“龙泉”是名剑的代称，相传为铸剑大师欧冶子所造。\n\n  出土文物证明，新石器时代，龙泉土地上就有人类活动。\n\n  东晋时属永嘉郡松阳县，建置龙渊乡。唐武德三年（620年），因避高祖李渊讳，改龙渊乡为龙泉乡。后建立龙泉县，县治地黄鹤镇（今龙渊镇）。明洪武三年（1370年），庆元县并入。洪武十三年十一月复置庆元县。\n\n  1949年5月13日，龙泉解放。1990年12月26日，经国务院批准，撤销龙泉县设立龙泉市（县级）。\n\n  如今，龙泉市被列为国家卫生城市，国家历史文化名城，被誉为“处州十县好龙泉”。</text>
+        </view>
+        <view class="first_bg">
+            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/bg_0.jpg" mode="widthFix" bindload="bgLoad"></image>
+        </view>
+    </view>
+    <view class="bg" id="bg1" animation="{{bgimg[1]}}">
+        <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/history_bg1.jpg" mode="heightFix"></image>
+    </view>
+    <!-- <view class="mask"></view> -->
+    <view class="text_body" animation="{{textBody[1]}}">
+        <view class="title">满眼风光龙渊城</view>
+        <view class="line"></view>
+        <view class="text">
+            <text>\n龙泉居郡上游，当闽浙之交。层峦叠耸，双溪横贯，“北山舒翼抱于左，桃源回首拱于右，前则修桥杰阁，后则九姑灵纵”，地势夷旷，他邑莫及。\n\n东有碧潭秘迹、锦寨烟云、宝山返照；西拥叠嶂钟声、云坞春柬、凤岗迎晖；南抱剑池雨霁、灵溪风月、金沙秋桂；北坐龙窟兴云、文峰积雪、竹院奇踪。浙闽边陲诸邑之冠,诚不虚传。\n\n</text>
+        </view>
+    </view>
+    <view class="bg" id="bg2" animation="{{bgimg[2]}}">
+        <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/history_bg2.jpg" mode="heightFix"></image>
+    </view>
+    <view class="text_body" animation="{{textBody[2]}}">
+        <view class="title">旧时风光旧时景</view>
+        <view class="line"></view>
+        <view class="text">
+            <text>\n龙泉精神从不绝于史诗旧事。由牛门岗先民开第一缕文明曙光，至秦西山麓第一把铁剑诞生；从龙泉青瓷的初烟到香菇砍花的发轫；由中国工农红军的入浙第一枪，至浙江抗战大后方的军歌嘹亮……勤劳朴实、敢为人先的先民志士谱写着龙渊大地上的华彩乐章。\n\n</text>
+        </view>
+    </view>
+
+    <view class="bg" id="bg3" animation="{{bgimg[3]}}">
+        <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/history_bg3.jpg" mode="heightFix"></image>
+    </view>
+    <view class="text_body" animation="{{textBody[3]}}">
+        <view class="title">剑都瓷邦好龙泉</view>
+        <view class="line"></view>
+        <view class="text">
+            <text>\n“处州十县好龙泉”。龙泉自古人文昌盛，不仅有青瓷之都、宝剑之邦之盛誉，且为世界香菇栽培发源地、中华灵芝第一乡、国家历史文化名城、国家卫生城市、国家级生态示范区、国家森林及园林城市。\n\n自然的雕琢鬼斧，赋予这大地挺拔峻秀之群峰，苍茫玉碧之林海，清悠明净之江水与瑰丽奇巧之佛光。历史的灵光仁慧，则孕育出这秀山丽水间小城的丰硕文史内蕴。\n\n</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,35 @@
+<!--components/introCard/introCard.wxml-->
+<view class="container" id="container" bindtap="showDetail" animation="{{showCard}}">
+    <view class="bg">
+        <image src="{{item.bg}}" mode="widthFix"></image>
+    </view>
+    <view class="title">{{item.title}}</view>
+    <view class="subtitle">{{item.subtitle}}</view>
+    <view class="id_container">
+        <view class="id">{{item.id}}</view>
+    </view>
+</view>
+<view class="mask {{flag ? '' : 'hide'}}" bindtap="closeDetail"></view>
+<view class="detail" animation="{{showPopup}}" style="z-index: {{flag ? '15' : '-1'}};">
+    <view class="close" bindtap="closeDetail">
+        <image src="../../images/close.png"></image>
+    </view>
+    <view class="detail_title_container">
+        <text class="detail_title">{{item.title}}</text> 
+        <text class="detail_subtitle">{{item.subtitle}}</text>
+    </view>
+    <view class="detail_main {{flagDetail? '' : 'hide'}}">
+        <text user-select space="emsp">{{item.detail}}</text>
+    </view>
+    <view class="detail_bg_container {{flagDetail? '' : 'hide'}}">
+        <view class="detail_bg">
+            <image src="{{item.bg}}" mode="widthFix"></image>
+        </view>
+        <view class="guide" bindtap="checkGuide">
+            <text>旅游攻略</text>
+            <image src="../../images/rightffffff.png"></image>
+        </view>
+    </view>
+    
+    
+</view>

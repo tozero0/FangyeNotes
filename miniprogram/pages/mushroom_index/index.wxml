@@ -1,0 +1,39 @@
+<swiper autoplay circular class="lunbo">
+  <swiper-item
+  wx:for="{{pic}}"
+wx:key="index"> 
+<image mode="widthFix" src="{{item.url}}"></image></swiper-item>  
+</swiper>
+<view class="pingjia"
+wx:for="{{judge}}"
+wx:key="id"
+>
+<text class="name iconfont icon-user"><text>网友</text></text>
+<text class="words">{{item.word}}
+<text class="judge_time">编辑于{{item.time}}</text></text>
+</view>
+<text class="chuxin">------------------------------------</text>
+
+<view class="free_time">
+<text class="free_time_title">开放时间:</text>
+<text class="free_time_state">8:30-11:30；15:00-17:30（周一闭馆）</text>
+</view>
+
+<view class="ticket">
+<text class="ticket_title">门票:</text>
+<text class="ticket_state">免费（在青瓷博物馆领取门票）</text>
+</view>
+
+<view class="spotline">
+<text class="title">公共交通</text>
+<ul>
+    <li>
+        <view>旅游观光公交1号线（游1）</view>
+        <text>首班07:30，末班17:30，发车间隔30分钟。</text>
+    </li>
+    <li>
+        <view>旅游观光公交2号线（游2）</view>
+        <text>首班07:30，末班17:30，发车间隔30分钟。</text>
+    </li>
+</ul>
+</view>

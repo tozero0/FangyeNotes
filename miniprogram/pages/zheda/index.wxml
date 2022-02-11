@@ -1,0 +1,36 @@
+
+<swiper autoplay circular class="lunbo">
+  <swiper-item
+  wx:for="{{pic}}"
+wx:key="index"> 
+<image mode="widthFix" src="{{item.url}}"></image></swiper-item>  
+</swiper>
+<view class="pingjia"
+wx:for="{{judge}}"
+wx:key="id"
+>
+<text class="name iconfont icon-user"><text>网友</text></text>
+<text class="words">{{item.word}}
+<text class="judge_time">编辑于{{item.time}}</text></text>
+</view>
+<text class="chuxin">------------------------------------</text>
+
+<view class="free_time">
+<text class="free_time_title">开放时间:</text>
+<text class="free_time_state">全年 周二至周日 8:30-17:00</text>
+</view>
+
+<view class="ticket">
+<text class="ticket_title">门票:</text>
+<text class="ticket_state">免费</text>
+</view>
+
+<view class="spotline">
+<text class="title">公共交通</text>
+<ul>
+    <li>
+        <view>龙泉7路</view>
+        <text>浙大旧址公园站</text>
+    </li>
+</ul>
+</view>

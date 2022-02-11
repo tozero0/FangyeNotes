@@ -1,0 +1,56 @@
+<!--pages/briefIntro/briefIntro.wxml-->
+<view class="container" style="display: {{loadFlag ? '' : 'none'}};">
+    <view class="page" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove"></view>
+    <view class="cover">
+        <view class="mask"></view>
+        <view class="animation_mask" animation="{{mask}}"></view>
+        <image src="../../images/introLogo.png" class="logo" mode="heightFix" animation="{{logoY}}"></image>
+        <!-- 该image必须根据logo图片实际长宽比设置wxss，否则触发动画瞬间会变形（为什么？） -->
+        <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/briefIntroBg.jpg" class="bg" mode="heightFix" bindload="bgLoad"></image>
+    </view>
+    <view class="topPara" animation="{{topPara}}">
+        <view class="topPara_title">
+            <text>浙江省丽水市龙泉市</text>
+        </view>
+        <view class="topPara_text">
+            <text user-select>龙泉市，是浙江省丽水市代管县级市，位于浙江省西南部的浙闽赣边境，素有“瓯婺八闽通衢”、“驿马要道，商旅咽喉”之称。龙泉市是国家历史文化名城，龙泉自古人文昌盛，不仅是著名的青瓷之都、宝剑之邦，而且还是世界香菇栽培发源地、中华灵芝第一乡。</text>
+        </view>
+        <view class="remind" bindtap="handleSwipeUp">
+            <text> ↑上滑查看更多介绍</text>
+        </view>
+    </view>
+    <scroll-view class="body" animation="{{swipe_up}}" scroll-y>
+        <view class="body_title">
+            <text>龙泉印象</text>
+        </view>
+        <view class="part1 box">
+            <text class="title">江浙西南 栝苍洞天\n</text>
+            <text class="text" user-select>列宿于天，州域在地。星分翼轸，处士名州。洞天十府，栝苍其一。\n\n古栝苍地，是于江浙南鄙、接壤闽中，北界台婺，东引瓯越，西交三衢，三山聚汇、六江滥觞，谷幽壑深，水秀山清。诚万山之都、四塞之国矣。</text>
+            <view class="image_box">
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part1_1.jpg" mode="heightFix"></image>
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part1_2.jpg" mode="heightFix"></image>
+            </view>
+        </view>
+        <view class="part2 box">
+            <text class="title">浙江绿谷 养生福地\n</text>
+            <text class="text" user-select>小城富于生活之息、调养之乐。菜市场常年烟火不绝，迎东隅旭日、别桑榆落霞；待华灯初上，广场内、滨江畔均是舞动不绝。\n\n上至花甲古稀，矍铄熠熠；下至黄口总角，嬉乐欢逐。一代广场舞文化，已然成健体结友、交游赏谈之乐事。</text>
+            <view class="image_box">
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part2_1.jpg" mode="heightFix"></image>
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part2_2.jpg" mode="heightFix"></image>
+            </view>
+        </view>
+        <view class="part3 box">
+            <text class="title">非遗故土 艺术之乡\n</text>
+            <text class="text" user-select>得天独厚的自然造物积淀而成淳朴勤勉的农耕文明，并内含丰富民俗艺术瑰宝。\n\n民间传说与文学是处州大地的精神之基，如哥窑与弟窑之竞比、张玉娘之运蹇、刘伯温之仁智等。\n\n民间工艺美术，如龙泉青瓷，龙泉宝剑，早已显赫名扬，其传统技艺亦被列入国家非物质文化遗产保护名录。\n</text>
+            <view class="image_box">
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part3_1.jpg" mode="heightFix"></image>
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part3_2.jpg" mode="heightFix"></image>
+            </view>
+            <text class="text" user-select>诸多民间传统建筑，如永和桥、浙江大学龙泉分校旧址等，已居全省与全国重点文保单位。\n\n得习总书记百字之赞的丽水大地，正是经济文艺齐飞，川野都会并进。无怪乎江南密境，绿谷福荫。\n</text>
+            <view class="image_box">
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part3_3.jpg" mode="heightFix"></image>
+                <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/part3_4.jpg" mode="heightFix"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

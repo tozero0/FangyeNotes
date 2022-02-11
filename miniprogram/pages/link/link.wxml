@@ -1,0 +1,37 @@
+<!--pages/link/link.wxml-->
+<view class="top">
+    <view class="top_text">点击链接复制到剪切板  长按二维码保存</view>
+</view>
+<view class="container">
+    <view class="text_body">
+        <view class="linkLogo"><image class="longquan" src="../../images/longquanLogo.png" mode="widthFix"></image></view>
+        <view class="text_title">浙江省龙泉市人民政府门户网站</view>
+        <view class="text_main" bindtap="copyLongquan">{{longquanGov}}</view>
+    </view>
+    <view class="split"></view>
+    <view class="text_body">
+        <view class="linkLogo"><image class="lishui" src="../../images/lishuiLogo.jpg" mode="widthFix"></image></view>
+        <view class="text_title">浙江省丽水市人民政府门户网站</view>
+        <view class="text_main" bindtap="copyLishui">{{lishuiGov}}</view>
+    </view>
+    <view class="split"></view>
+    <view class="pic_body">
+        <view class="pic" capture-bind:longpress="saveQR1">
+            <image src="../../images/govQRCode.png"></image>
+        </view>
+        <view class="profile">
+            <image src="../../images/longquanOfficalAccount.jpg"></image>
+        </view>
+        <view class="pic_title">龙泉政府公众号 掌上龙泉</view>
+    </view>
+    <view class="split"></view>
+    <view class="pic_body">
+        <view class="pic" capture-bind:longpress="saveQR2">
+            <image src="../../images/fangyeQRCode.png"></image>
+        </view>
+        <view class="profile">
+            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/user/profile.png"></image>
+        </view>
+        <view class="pic_title">小程序关联公众号 芳野札记</view>
+    </view>
+</view>

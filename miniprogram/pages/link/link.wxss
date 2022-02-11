@@ -1,0 +1,109 @@
+/* pages/link/link.wxss */
+.container {
+    position: absolute;
+    width: 100%;
+    padding: 48rpx 0;
+}
+
+.top {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    height: 64rpx;
+    border-bottom: solid;
+    border-color: rgb(129, 129, 129);
+    border-width: 0.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    z-index: 5;
+}
+
+.split {
+    position: relative;
+    width: 90%;
+    margin: 80rpx 5% 0 5%;
+    height: 1px;
+    background-color: rgb(95, 95, 95);
+    z-index: 15;
+}
+
+.text_title {
+    position: relative;
+    padding: 12rpx;
+    margin-top: 24rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    text-shadow: 0.3rpx 0.3rpx 2rpx #1a1a1a3f;
+}
+
+.linkLogo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 96rpx;
+}
+
+.longquan {
+    width: 320rpx;
+}
+
+.lishui {
+    width: 200rpx;
+}
+
+.text_main {
+    position: relative;
+    width: 100%;
+    padding-top: 12rpx;
+    color: rgb(0, 0, 255);
+}
+
+.text_body {
+    width: 100%;
+    text-align: center;
+}
+
+.pic_body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 48rpx;
+    margin: auto;
+}
+
+.pic {
+    position: relative;
+    width: 320rpx;
+    height: 320rpx;
+    left: 0;
+    margin: auto;
+}
+
+.pic image {
+    width: 320rpx;
+    height: 320rpx;
+}
+
+.pic_title {
+    width: 640rpx;
+    margin: auto;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: 500;
+    text-shadow: 0.3rpx 0.3rpx 2rpx #1a1a1a3a;
+}
+
+.profile {
+    position: relative;
+    margin: auto;
+}
+
+.profile image {
+    width: 48px;
+    height: 48px;
+    border-radius: 8rpx;
+}

@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="fullScreen">
+  <view class="profile">
+    <image src="../../images/profile.png"></image>
+  </view>
+  <view class="title">口袋里的龙泉</view>
+</view>
+
+
+
+<view class="progress">
+  <view class="loading"><image src="../../images/loading.gif"></image></view>
+</view>

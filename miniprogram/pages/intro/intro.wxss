@@ -1,0 +1,102 @@
+/* pages/intro/intro.wxss */
+.container {
+    background-color: rgb(233, 233, 233);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    width: 64rpx;
+    height: 64rpx;
+    position: relative;
+    top: 680rpx;
+}
+
+.swiper {
+    position: absolute;
+    width: 100%;
+}
+
+.swiper-item image {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.bar {
+    background: rgb(255, 255, 255);
+    height: 190rpx;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rpx 5% 0 5%;
+}
+
+.button_icon {
+    align-items: flex-start;
+    width: 100rpx;
+    height: 120rpx;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-size: 100% 100%;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    color: black;
+}
+
+.button_icon image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.list_top {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 12rpx;
+    padding: 24rpx 0 12rpx 48rpx;
+    display: flex;
+}
+
+.list_title {
+    font-size: 44rpx;
+}
+
+.list_subtitle {
+    font-size: 32rpx;
+    padding: 16rpx 0 0 32rpx;
+    font-family: "STFangsong";
+}
+
+.list {
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+    top: -8px;
+    height: 1px;
+    flex: 1;
+    display: flex;
+    padding-top: 12rpx;
+}
+
+.content {
+    position: relative;
+    width: 94%;
+    margin: 24rpx auto;
+    height: 128px;
+    overflow: hidden;
+    padding: 0 2%;
+}
