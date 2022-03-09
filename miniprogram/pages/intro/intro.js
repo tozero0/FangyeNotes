@@ -1,5 +1,8 @@
 // pages/intro/intro.js
 import introCardList from "../../datas/introDatas.js"
+
+var app = getApp()
+
 Page({
 
     /**
@@ -29,13 +32,70 @@ Page({
         src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/intro_swiper/swiper7.jpg'
       }],
       introCards: [],
-      flag: [false, false, false] //后三张卡片是否左滑
+      flag: [false, false, false], //后三张卡片是否左滑
+      detailFlag: [false, false, false, false, false, false], //是否显示详情（由全局变量传入）
+      detailExtend: [],
+      screenWidth: wx.getSystemInfoSync().screenWidth,
+      currentIndex: 0
+    },
+
+    showDetail: function (e) {
+      let that = this
+      console.log('用户点击了卡片' + e.currentTarget.dataset.index)
+      let index = e.currentTarget.dataset.index
+      that.data.currentIndex = index
+
+      let temp = 'detailFlag[' + index + ']'
+      that.setData({
+        [temp]: true
+      })
+      console.log(that.data.detailFlag)
+
+      //展开动画
+      var animation = wx.createAnimation({
+        delay: 100,
+        duration: 400,
+        timingFunction: 'ease'
+      })
+      animation.left(0.1*this.data.screenWidth).width(0.8*this.data.screenWidth).step()
+      let temp2 = 'detailExtend[' + index + ']'
+      setTimeout(() => {
+        this.setData({
+          [temp2]: animation.export()
+        })
+      }, 20);
+
+      //使背景图片、文字显示
+      
+      this.detail[this.data.currentIndex].unhideBg()
+      console.log('已执行展开动画')
+
+    },
+
+    closeDetail: function () {
+      let that = this
+      let temp = 'detailFlag[' + that.data.currentIndex + ']'
+      that.setData({
+        [temp]: false
+      })
+      console.log('关闭详情')
+      var animation = wx.createAnimation({
+        delay: 0,
+        duration: 0
+      })
+      animation.width(0).left(0.5*that.data.screenWidth).step()
+      let temp2 = 'detailExtend[' + that.data.currentIndex + ']'
+      that.setData({
+        [temp2]: animation.export()
+      })
+
+      this.detail[that.data.currentIndex].hideBg()
     },
 
     //跳转到“龙泉简介”页面
     viewBriefIntro: function () {
       wx.navigateTo({
-        url: '../../pages/briefIntro/briefIntro',
+        url: '../../pages/briefIntro/briefIntro'
       })
     },
 
@@ -99,13 +159,37 @@ Page({
         introCards: introCardList.introCards
       })
       console.log(this.data.introCards)
+      
+      //先“播放”一次详情的动画
+      var animation = wx.createAnimation({
+        delay: 0,
+        timingFunction: 'step-start',
+        duration: 0
+      })
+      animation.left(0.5*this.data.screenWidth).width(0).step()
+
+      let ani = animation.export()
+      let temp0 = 'detailExtend[' + 0 + ']'
+      let temp1 = 'detailExtend[' + 1 + ']'
+      let temp2 = 'detailExtend[' + 2 + ']'
+      let temp3 = 'detailExtend[' + 3 + ']'
+      let temp4 = 'detailExtend[' + 4 + ']'
+      let temp5 = 'detailExtend[' + 5 + ']'
+      this.setData({
+        [temp0]: ani,
+        [temp1]: ani,
+        [temp2]: ani,
+        [temp3]: ani,
+        [temp4]: ani,
+        [temp5]: ani
+      })
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+      this.detail = this.selectAllComponents('#detail')
     },
 
     /**
@@ -142,6 +226,14 @@ Page({
       })
       wx.getImageInfo({
         src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/guide/index1.jpg',
+        complete (res) {}
+      })
+      wx.getImageInfo({
+        src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/briefIntroBg.jpg',
+        complete (res) {}
+      })
+      wx.getImageInfo({
+        src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/bg_0.jpg',
         complete (res) {}
       })
     },

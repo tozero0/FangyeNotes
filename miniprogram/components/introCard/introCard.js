@@ -1,4 +1,6 @@
 // components/introCard/introCard.js
+var app = getApp();
+
 Component({
     /**
      * 组件的属性列表
@@ -33,39 +35,45 @@ Component({
         showListCard: function (e) {
             let that = this
             if (that.properties.text == e) {
-                var animation = wx.createAnimation({
-                    delay: 0,
-                    timingFunction: 'ease-out',
-                    duration: 600
-                  })
-                  animation.left(0).step()
-                  that.setData({
-                      showCard: animation.export()
-                  })
+                setTimeout (() => {
+                    app.globalData.showCardFlag[that.properties.text] = true;
+                    var animation = wx.createAnimation({
+                        delay: 0,
+                        timingFunction: 'ease',
+                        duration: 600
+                      })
+                      animation.left(0).step()
+                      that.setData({
+                          showCard: animation.export()
+                      })
+                }, 200)
+                
             }
         },
 
+        //点击卡片后显示详情
         showDetail: function () {
-            if (!this.data.flag) {
-                this.setData({
-                    flag: true
-                })
-                console.log('显示弹框')
-                var animation = wx.createAnimation({
-                  duration: 300,
-                  timingFunction: "ease-out",
-                  delay: 200
-                })
-                animation.opacity(0.94).left(0.1*this.data.screenWidth).width(0.8*this.data.screenWidth).step();
-                this.setData({
-                    showPopup: animation.export()
-                })
-                setTimeout(() => {
-                    this.setData({
-                        flagDetail: true
-                    })
-                }, 500);
-            }
+
+            // if (!this.data.flag) {
+            //     this.setData({
+            //         flag: true
+            //     })
+            //     console.log('显示弹框')
+            //     var animation = wx.createAnimation({
+            //       duration: 300,
+            //       timingFunction: "ease",
+            //       delay: 200
+            //     })
+            //     animation.opacity(0.94).left(0.1*this.data.screenWidth).width(0.8*this.data.screenWidth).step();
+            //     this.setData({
+            //         showPopup: animation.export()
+            //     })
+            //     setTimeout(() => {
+            //         this.setData({
+            //             flagDetail: true
+            //         })
+            //     }, 500);
+            // }
             
         },
         closeDetail: function () {
@@ -83,48 +91,15 @@ Component({
             })
         },
 
-        checkGuide: function () {
-            console.log('前往旅游攻略页面' + this.properties.text)
-            switch (this.properties.text) {
-                case '0':
-                    wx.navigateTo({
-                      url: '../../pages/xijie/index',
-                    })
-                    break;
-                case '1':
-                    wx.navigateTo({
-                      url: '../../pages/baoxi/index',
-                    })
-                    break;
-                case '2':
-                    wx.navigateTo({
-                      url: '../../pages/zheda/index',
-                    })
-                    break;
-                case '3':
-                    wx.navigateTo({
-                      url: '../../pages/qingci_museum/index',
-                    })
-                    break;
-                case '4':
-                    wx.navigateTo({
-                      url: '../../pages/mushroom_index/index',
-                    })
-                    break;
-                case '5':
-                    wx.navigateTo({
-                      url: '../../pages/qipanshan/index',
-                    })
-                    break;
-            }
-        },
+        
     },
 
-    pageLifetimes: {
-        show: function () {
+    lifetimes: {
+        ready: function () {
             let that = this;
-            setTimeout(() => {  //鬼知道为什么这里加了setTimeout()真机上才正常播放 눈_눈
-                if (that.properties.text < 3) {
+            setTimeout(() => {
+                if (that.properties.text < 3 && !app.globalData.showCardFlag[that.properties.text]) {
+                    app.globalData.showCardFlag[that.properties.text] = true
                     var animation = wx.createAnimation({
                         delay: 200 + 100*that.properties.text,
                         timingFunction: 'ease-out',
@@ -135,8 +110,33 @@ Component({
                           showCard: animation.export()
                       })
                 }
-            }, 200);
+            }, 500);
+            
+            //以下代码的作用是使动画在ios系统下能正常播放
+            if (!app.globalData.showCardFlag[this.properties.text]) {
+                var animationPre = wx.createAnimation({
+                    delay: 0,
+                  })
+                  animationPre.left(this.data.screenWidth).step()
+                  this.setData({
+                      showCard: animationPre
+                  })
+            } else {
+                var animationPre = wx.createAnimation({
+                    delay: 0,
+                    timingFunction: 'step-end'
+                  })
+                  animationPre.left(0).step()
+                  this.setData({
+                      showCard: animationPre
+                  })
+            }
+        }
+    },
 
+    pageLifetimes: {
+        show: function () {
+            
         },
 
     }

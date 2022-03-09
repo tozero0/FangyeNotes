@@ -1,4 +1,6 @@
 // pages/briefIntro/briefIntro.js
+var app = getApp();
+
 Page({
 
     /**
@@ -14,34 +16,24 @@ Page({
         lastY: 0,     //滑动结束y轴位置
         moveDistance: 0,
         flag: false,    //“更多介绍”是否显示
-        loadFlag: false,    //背景图片是否加载完毕
-    },
-
-    //监听背景加载完成
-    bgLoad: function () {
-        wx.hideLoading({
-          success: (res) => {
-              console.log('背景图片加载完毕')
-              this.setData({
-                  loadFlag: true
-              })
-          },
-        })
+        //loadFlag: false,    //背景图片是否加载完毕
     },
 
     //“更多介绍”显示动画
     handleSwipeUp: function () {
-        var animation1 = wx.createAnimation({
-          duration: 500,
-          timingFunction: 'ease',
-        })
 
+        var animation1 = wx.createAnimation({
+          duration: 600,
+          timingFunction: 'ease',
+          delay: 0,
+        })
+    
         animation1.top(0.2*this.data.windowHeight).step();
 
         this.setData({
             swipe_up: animation1.export()
         })
-        console.log('上滑' + this.data.swipe_up)
+        console.log(this.data.swipe_up)
 
         var animation2 = wx.createAnimation({
             duration: 800,
@@ -162,9 +154,33 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.showLoading({
-          title: '加载中',
-          mask: true
+        // let that = this;
+        // wx.showLoading({
+        //   title: '加载中',
+        //   mask: true,
+        //   success (res) {
+        //     wx.getImageInfo({
+        //         src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/briefIntroBg.jpg',
+        //         success (res) {
+        //             wx.hideLoading({
+        //               success: (res) => {
+        //                   that.setData({
+        //                       loadFlag: true
+        //                   })
+        //               },
+        //             })
+        //         }
+        //       })
+        //   }
+        // })
+
+        //下面这几行代码，看上去好像没什么效果，但是如果去掉，“详细介绍”框第一次上滑的动画就会不正常播放（直接跳到最后一帧）。这是为什么？
+        var animation = wx.createAnimation({
+          delay: 0,
+        })
+        animation.top(1.15*this.data.windowHeight).step()
+        this.setData({
+            swipe_up: animation.export()
         })
     },
 

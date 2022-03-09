@@ -1,0 +1,91 @@
+/* components/introDetail/introDetail.wxss */
+.hide {
+    display: none;
+}
+
+.detail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 24rpx;
+    background-color: rgb(248, 248, 248);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.detail_title_container {
+    margin: 16rpx 0 0 32rpx;
+    
+}
+
+.detail_title {
+    font-size: 48rpx;
+    text-shadow: 2rpx 2rpx 4rpx rgb(56, 56, 56);
+}
+
+.detail_subtitle {
+    font-size: 36rpx;
+    padding-left: 32rpx;
+    top: 12rpx;
+    font-weight: 500;
+}
+
+.detail_main {
+    padding: 32rpx 24rpx;
+    position: relative;
+    z-index: 36;
+}
+
+.guide {
+    position: absolute;
+    bottom: 12rpx;
+    left: 0;
+    font-size: 40rpx;
+    color: #fff;
+    display: flex;
+    text-shadow: 1.5rpx 1.5rpx 4rpx rgb(58, 58, 58);
+    padding-right: 24rpx;
+    transform: rotateY(180deg);
+}
+
+.guide text {
+    margin: auto 0;
+}
+
+.guide image {
+    width: 42rpx;
+    height: 42rpx;
+    margin: auto 0;
+    padding-top: 2px;
+}
+
+.detail_bg_container {
+    position: absolute;
+    width: 96%;
+    height: 60%;
+    bottom: 1.8%;
+    overflow: hidden;
+    left: 2%;
+    border-radius: 24rpx;
+    transform: rotateY(180deg);
+}
+
+.detail_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 100%;
+    border-radius: 24rpx;
+    -webkit-box-reflect: below 0 linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 100%);
+}
+
+.detail_bg image {
+    transform: rotate(180deg);
+    vertical-align: top;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

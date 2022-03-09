@@ -1,12 +1,12 @@
 <!--pages/briefIntro/briefIntro.wxml-->
-<view class="container" style="display: {{loadFlag ? '' : 'none'}};">
+<view class="container">
     <view class="page" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove"></view>
     <view class="cover">
         <view class="mask"></view>
         <view class="animation_mask" animation="{{mask}}"></view>
         <image src="../../images/introLogo.png" class="logo" mode="heightFix" animation="{{logoY}}"></image>
         <!-- 该image必须根据logo图片实际长宽比设置wxss，否则触发动画瞬间会变形（为什么？） -->
-        <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/briefIntroBg.jpg" class="bg" mode="heightFix" bindload="bgLoad"></image>
+        <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/briefIntro/briefIntroBg.jpg" class="bg" mode="heightFix"></image>
     </view>
     <view class="topPara" animation="{{topPara}}">
         <view class="topPara_title">

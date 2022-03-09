@@ -1,12 +1,12 @@
 <!--pages/history/history.wxml-->
-<view class="container" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend" style="display: {{flag ? '' : 'none'}};">
+<view class="container" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
     <view class="first_page">
         <view class="first_title">历史上的龙泉县</view>
         <view class="first_text">
             <text user-select space="emsp">  龙泉县，又称龙源县。“龙泉”是名剑的代称，相传为铸剑大师欧冶子所造。\n\n  出土文物证明，新石器时代，龙泉土地上就有人类活动。\n\n  东晋时属永嘉郡松阳县，建置龙渊乡。唐武德三年（620年），因避高祖李渊讳，改龙渊乡为龙泉乡。后建立龙泉县，县治地黄鹤镇（今龙渊镇）。明洪武三年（1370年），庆元县并入。洪武十三年十一月复置庆元县。\n\n  1949年5月13日，龙泉解放。1990年12月26日，经国务院批准，撤销龙泉县设立龙泉市（县级）。\n\n  如今，龙泉市被列为国家卫生城市，国家历史文化名城，被誉为“处州十县好龙泉”。</text>
         </view>
         <view class="first_bg">
-            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/bg_0.jpg" mode="widthFix" bindload="bgLoad"></image>
+            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/bg_0.jpg" mode="widthFix"></image>
         </view>
     </view>
     <view class="bg" id="bg1" animation="{{bgimg[1]}}">

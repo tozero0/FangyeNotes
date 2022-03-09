@@ -1,35 +1,73 @@
 // pages/help/help.js
+var app = getApp();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        flag: false,    //页面是否显示
-        progressRemain: 3,
-    },
-
-    imageLoad: function () {
-        if (!--this.data.progressRemain) {
-            wx.hideLoading({
-              success: (res) => {
-                  console.log('页面图片加载完毕')
-                  this.setData({
-                      flag: true
-                  })
-              },
-            })
-        }
+        // loadFlag: false,    //页面是否显示
+        // progressRemain: 3,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.showLoading({
-            title: '加载中',
-            mask: true
-          })
+        // let that = this;
+        // wx.showLoading({
+        //     title: '加载中',
+        //     mask: true,
+        //     success (res) {
+        //         wx.getImageInfo({
+        //             src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_1.png',
+        //             success (res) {
+        //                 if (!--that.data.progressRemain) {
+        //                     wx.hideLoading({
+        //                       complete: (res) => {
+        //                           that.setData({
+        //                               loadFlag: true,
+        //                               test2: '已执行!'
+        //                           })
+        //                       },
+        //                     })
+        //                 }
+        //             }
+        //           })
+        //           wx.getImageInfo({
+        //             src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_2.png',
+        //             success (res) {
+        //                 if (!--that.data.progressRemain) {
+        //                     wx.hideLoading({
+        //                       success: (res) => {
+        //                           that.setData({
+        //                               loadFlag: true,
+        //                               test: that.data.test + 1
+        //                           })
+        //                       },
+        //                     })
+        //                 }
+        //             }
+        //           })
+        //           wx.getImageInfo({
+        //             src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_3.png',
+        //             success (res) {
+        //                 if (!--that.data.progressRemain) {
+        //                     wx.hideLoading({
+        //                       success: (res) => {
+        //                           that.setData({
+        //                               loadFlag: true,
+        //                               test: that.data.test + 1
+        //                           })
+        //                       },
+        //                     })
+        //                 }
+        //             }
+        //           })
+        //     }
+        // })
+        
     },
 
     /**

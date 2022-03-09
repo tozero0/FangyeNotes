@@ -1,0 +1,19 @@
+<!--components/introDetail/introDetail.wxml-->
+<view class="detail" animation="{{showPopup}}">
+    <view class="detail_title_container">
+        <text class="detail_title">{{item.title}}</text> 
+        <text class="detail_subtitle {{bgFlag? '' : 'hide'}}">{{item.subtitle}}</text>
+    </view>
+    <view class="detail_main {{bgFlag? '' : 'hide'}}">
+        <text user-select space="emsp">{{item.detail}}</text>
+    </view>
+    <view class="detail_bg_container {{bgFlag? '' : 'hide'}}">
+        <view class="detail_bg">
+            <image src="{{item.bg}}" mode="widthFix"></image>
+        </view>
+        <view class="guide" bindtap="checkGuide">
+            <text>旅游攻略</text>
+            <image src="../../images/rightffffff.png"></image>
+        </view>
+    </view>
+</view>

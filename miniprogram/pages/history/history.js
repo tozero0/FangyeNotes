@@ -1,4 +1,6 @@
 // pages/history/history.js
+var app = getApp();
+
 Page({
 
     /**
@@ -12,16 +14,7 @@ Page({
         bgimg: [],
         textBody: [],
         screenHeight: wx.getSystemInfoSync().screenHeight,
-        flag: false,    //页面是否显示
-    },
-
-    bgLoad: function () {
-        wx.hideLoading({
-          success: (res) => {},
-        })
-        this.setData({
-            flag: true
-        })
+        //loadFlag: false,    //页面是否显示
     },
 
     //滑动开始事件
@@ -215,7 +208,25 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        // let that = this;
+        // wx.showLoading({
+        //   title: '加载中',
+        //   success (res) {
+        //     wx.getImageInfo({
+        //         src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/history/bg_0.jpg',
+        //         success (res) {
+        //             wx.hideLoading({
+        //               success: (res) => {
+        //                   that.setData({
+        //                       loadFlag: true
+        //                   })
+        //               },
+        //             })
+        //         }
+        //       })
+        //   }
+        // })
+        
     },
 
     /**
@@ -229,9 +240,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        wx.showLoading({
-          title: '加载中',
-        })
+        
     },
 
     /**

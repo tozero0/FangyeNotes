@@ -1,6 +1,9 @@
 // index.js
 // 获取应用实例
 const app = getApp()
+const db = wx.cloud.database({
+  env: 'cloud1-7ggr5g4zf5b62344'
+})
 
 Page({
   data: {
@@ -11,39 +14,44 @@ Page({
     screenHeight: wx.getSystemInfoSync().screenHeight,
     screenWidth: wx.getSystemInfoSync().screenWidth,
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
-    progressRemain: 8,
+    progressRemain: 9,
+    logged: false,  //是否已登录
   },
 
   onLoad() {
     this.setData({
       moveDistance: 0
     })
+    let that = this
+    var openid = ''
+    wx.cloud.callFunction({
+      name: 'loginApp',
+      complete: res => {
+        app.globalData.userInfo = res.result
+        app.globalData.openid = res.result.openid
+        openid = res.result.openid
+        console.log('已获取用户openid：' + openid)
+        db.collection('users').where({
+          openid: openid
+        }).get({
+          success: function(res) {
+            if (!res.data.length) {
+              console.log('新用户，向数据库添加用户信息')
+            } else {
+              console.log('已查找到用户信息')
+              that.data.logged = true
+              app.globalData.logged = true
+              app.globalData.nickName = res.data[0].nickName
+              app.globalData.profile = res.data[0].profile
+            }
+            if (!--that.data.progressRemain) {
+              that.enterProgram()
+            }
+          }
+        })
+      }
+    })
   },
-
-  // //监听用户向下滑动动作
-  // handletouchmove (event) {
-  //   let currentY = event.changedTouches[0].clientY;
-  //   let that = this;
-  //   if (currentY > this.data.startY) return;
-  //   this.setData({
-  //     moveDistance: this.data.moveDistance > -100 ? (currentY - that.data.startY)*0.6 : -100 //*号后的数字是滑动灵敏度
-  //   })
-  //   console.log(this.data.moveDistance)
-  // },
-  // //滑动开始事件
-  // handletouchstart: function (event) {
-  //   this.data.startY = event.changedTouches[0].clientY
-  // },
-  // //触摸结束
-  // handletouchend: function (event) {
-  //   if (this.data.moveDistance <= -50) {
-  //     console.log('进入小程序')
-  //     this.enterProgram()
-  //   }
-  //   this.setData({
-  //     moveDistance: 0
-  //   })
-  // },
 
   //预先加载introCard图片
   reloadCard: function () {
@@ -124,9 +132,11 @@ Page({
 
   //点击按钮进入小程序
   enterProgram: function () {
-    wx.switchTab({
-      url: '../../pages/intro/intro',
-    })
+    if (!app.globalData.enterFlag) {
+      wx.switchTab({
+        url: '../../pages/intro/intro',
+      })
+    }
   },
 
   /**
@@ -134,9 +144,18 @@ Page({
      */
     onShow: function () {
       let that = this
-    
       setTimeout(function() {
         that.reloadCard()
       }, 200);
+      setTimeout(function () {
+        if (!app.globalData.enterFlag) {
+          that.enterProgram()
+        }
+        console.log('备用事件')
+      }, 6000)
+    },
+
+    onUnload: function () {
+      app.globalData.enterFlag = true
     },
 })

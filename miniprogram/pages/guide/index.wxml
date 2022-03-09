@@ -9,26 +9,18 @@
 </view>
 
 <view class="remen">热门景点</view>
-<scroll-view class="item_container" scroll-y>
-
-<view class="hotspot">
-<view class="pic"
-wx:for="{{position_list}}"
-wx:for-index="index1"
-wx:for-item="items1"
-wx:key="id"
-bindtap="handleImgTap"
-data-index="{{items1.id}}"
->
-<view class="pics"><image  mode="widthFix" src="{{items1.icon}}"></image></view>
-
-<text>{{items1.name}}</text>
-
+  <view class="hotspot">
+  <view class="pic"
+  wx:for="{{position_list}}"
+  wx:for-index="index1"
+  wx:for-item="items1"
+  wx:key="id"
+  bindtap="handleImgTap"
+  data-index="{{items1.id}}">
+    <view class="pics"><image  mode="widthFix" src="{{items1.icon}}"></image></view>
+    <text>{{items1.name}}</text>
+  </view>
+<view class="padding"><text>\n\n\n\n\n\n\n</text></view>
 </view>
-
-
-</view>
-<view class="padding"></view>
-</scroll-view>
 
 </view>

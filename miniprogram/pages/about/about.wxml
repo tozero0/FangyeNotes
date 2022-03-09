@@ -7,7 +7,7 @@
     </view>
     <view class="info">
         <view class="title">口袋里的龙泉</view>
-        <view class="version">v1.0.0</view>
+        <view class="version" bindtap="handleVersion">v1.2.2</view>
     </view>
     <view class="main">
         <view class="main_title">小程序开发</view>
@@ -20,5 +20,5 @@
         <view class="main_title">联系邮箱</view>
         <view class="main_text" bindtap="copyEmail"><text class="email">{{developerEmail}}</text></view>
     </view>
-    <view class="privacy" bindtap="handlePrivacy" style="display: none;">隐私保护指引</view>
+    <view class="privacy" bindtap="handlePrivacy">隐私保护指引</view>
 </view>

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "introCard": "../../components/introCard/introCard"
+    "introCard": "../../components/introCard/introCard",
+    "introDetail": "../../components/introDetail/introDetail"
   },
   "navigationBarTitleText": "龙泉介绍"
 }

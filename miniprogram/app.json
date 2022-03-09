@@ -16,7 +16,8 @@
         "pages/link/link",
         "pages/about/about",
         "pages/privacy/privacy",
-        "pages/help/help"
+        "pages/help/help",
+        "pages/version/version"
     ],
     "window": {
         "backgroundTextStyle": "light",

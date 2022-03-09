@@ -33,15 +33,26 @@
     flex-direction: column;
     align-items: center;
     color: #aaa;
-    z-index: 1;
+    z-index: 15;
 }
   
-.userinfo-avatar {
-    overflow: hidden;
-    width: 128rpx;
-    height: 128rpx;
-    margin: 20rpx;
+.profile {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.profile image {
+    width: 160rpx;
+    height: 160rpx;
     border-radius: 50%;
+}
+
+.nickName {
+    position: relative;
+    margin-top: 16rpx;
+    font-size: 40rpx;
+    text-align: center;
 }
 
 .officalAccountCard {
@@ -117,6 +128,14 @@
     position: absolute;
     height: 100rpx;
     top: 106rpx;
+    opacity: 0;
+    z-index: 11;
+}
+
+.service {
+    position: absolute;
+    height: 100rpx;
+    top: 210rpx;
     opacity: 0;
     z-index: 11;
 }

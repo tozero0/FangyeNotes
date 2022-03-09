@@ -6,7 +6,7 @@
     margin: auto;
     overflow: hidden;
     border-radius: 12rpx;
-    left: 70%;
+    left: 100%;
 }
 
 .title {
@@ -87,13 +87,15 @@
 .detail {
     position: fixed;
     width: 0;
-    height: 50%;
+    height: 50vh;
     left: 50%;
     top: 25%;
     border-radius: 24rpx;
     background-color: rgb(248, 248, 248);
     opacity: 0;
     margin: 0 auto;
+    z-index: 100;
+    overflow: hidden;
 }
 
 .detail_title_container {

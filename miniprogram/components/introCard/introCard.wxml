@@ -9,8 +9,8 @@
         <view class="id">{{item.id}}</view>
     </view>
 </view>
-<view class="mask {{flag ? '' : 'hide'}}" bindtap="closeDetail"></view>
-<view class="detail" animation="{{showPopup}}" style="z-index: {{flag ? '15' : '-1'}};">
+<!-- <view class="mask {{flag ? '' : 'hide'}}" bindtap="closeDetail"></view>
+<view class="detail" animation="{{showPopup}}" style="z-index: {{flag ? '1000' : '-1'}};">
     <view class="close" bindtap="closeDetail">
         <image src="../../images/close.png"></image>
     </view>
@@ -32,4 +32,4 @@
     </view>
     
     
-</view>
+</view> -->

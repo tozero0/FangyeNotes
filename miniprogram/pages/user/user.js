@@ -1,4 +1,9 @@
 // pages/user/user.js
+const app = getApp()
+const db = wx.cloud.database({
+  env: 'cloud1-7ggr5g4zf5b62344'
+})
+
 Page({
 
     /**
@@ -10,8 +15,59 @@ Page({
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         canIUseGetUserProfile: false,
         canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
-        screenWidth: wx.getSystemInfoSync().screenWidth
+        screenWidth: wx.getSystemInfoSync().screenWidth,
+        logged: false,  //是否登录
+        nickName: '',
+        profile: ''
       },
+
+    loginApp: function() {
+      let that = this
+      if (!app.globalData.logged) {
+        wx.getUserProfile({
+          desc: '用于完善用户资料',
+          success: res => {
+            wx.showLoading({
+              title: '登录中',
+              mask: true
+            })
+            that.setData({
+              nickName: res.userInfo.nickName,
+              profile: res.userInfo.avatarUrl,
+              logged: true
+            })
+            app.globalData.userInfo = res.userInfo
+            console.log(app.globalData.openid)
+            //向数据库添加信息
+            db.collection('users').add({
+              data: {
+                openid: app.globalData.openid,
+                nickName: res.userInfo.nickName,
+                profile: res.userInfo.avatarUrl
+              },
+              success: function(res_) {
+                console.log('已向数据库添加用户' + res.userInfo.nickName + '的信息')
+                wx.hideLoading({
+                  success: (res) => {},
+                })
+              }
+            })
+          },
+          fail: function(res) {
+            console.log('取消登录')
+            wx.showToast({
+              title: '取消登录',
+              icon: 'none'
+            })
+          }
+        })
+      }
+    },
+
+    //获取“意见反馈”消息
+    handleContact: function (e) {
+      console.log(e)
+    },
 
     //跳转到芳野札记微信公众号
     handleOfficalAccount: function (){
@@ -75,11 +131,24 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-        if (wx.getUserProfile) {
-          this.setData({
-            canIUseGetUserProfile: true
-          })
-        }
+      if (app.globalData.logged) {
+        this.setData({
+          nickName: app.globalData.nickName,
+          profile: app.globalData.profile
+        })
+      }
+        wx.getImageInfo({
+          src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_1.png',
+          complete (res) {}
+        })
+        wx.getImageInfo({
+          src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_2.png',
+          complete (res) {}
+        })
+        wx.getImageInfo({
+          src: 'cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_3.png',
+          complete (res) {}
+        })
       },
 
     /**
@@ -93,7 +162,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      this.setData({
+        logged: app.globalData.logged
+      })
     },
 
     /**

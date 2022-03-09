@@ -8,6 +8,12 @@ Page({
         developerEmail: '1219879477@qq.com'
     },
 
+    handleVersion: function () {
+        wx.navigateTo({
+          url: '../../pages/version/version',
+        })
+    },
+
     //跳转到隐私保护指引页面
     handlePrivacy: function (){
         wx.navigateTo({

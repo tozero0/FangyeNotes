@@ -38,8 +38,13 @@
     </view>
     <scroll-view class="list" id="list" scroll-y bindscroll="scrollList">
         <view class="content" wx:for="{{introCards}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-            <introCard item="{{item}}" id="introCard" text="{{index}}"></introCard>
+            <introCard item="{{item}}" id="introCard" text="{{index}}" bindtap="showDetail" data-index="{{index}}"></introCard>
         </view>
     </scroll-view>
-    
+</view>
+
+<view class="mask" style="display: {{detailFlag[0] + detailFlag[1] + detailFlag[2] + detailFlag[3] + detailFlag[4] + detailFlag[5] ? '' : 'none'}};" bindtap="closeDetail"></view>
+
+<view class="detail_container" wx:for="{{introCards}}" wx:for-item="item" wx:for-index="index" wx:key="index" style="display: {{detailFlag[index] ? '' : 'none'}};" animation="{{detailExtend[index]}}">
+    <introDetail class="detail" id="detail" item="{{item}}" text="{{index}}"></introDetail>
 </view>

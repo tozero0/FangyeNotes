@@ -1,26 +1,26 @@
 <!--pages/help/help.wxml-->
-<view class="container" style="display: {{flag ? '' : 'none'}};">
+<view class="container">
     <view class="top">
         <text>小程序使用说明</text>
     </view>
     <view class="body">
         <view class="pic">
             <!-- 图片纵横像素比为2.17 -->
-            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_1.png" mode="widthFix" bindload="imageLoad"></image>
+            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_1.png" mode="widthFix"></image>
         </view>
         <view class="text">
             <view class="num">1.</view>
             <view><text class="main" space="emsp">  在“龙泉介绍”页面，了解龙泉地理位置、历史文化等基本信息，查看龙泉著名景区简介</text></view>
         </view>
         <view class="pic">
-            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_2.png" mode="widthFix" bindload="imageLoad"></image>
+            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_2.png" mode="widthFix"></image>
         </view>
         <view class="text">
             <view class="num">2.</view>
             <view><text class="main" space="emsp">  在“旅游攻略”界面，查询龙泉著名景区的出游攻略，包括景区开放时间、门票、交通等信息</text></view>
         </view>
         <view class="pic">
-            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_3.png" mode="widthFix" bindload="imageLoad"></image>
+            <image src="cloud://cloud1-7ggr5g4zf5b62344.636c-cloud1-7ggr5g4zf5b62344-1309374777/help/help_3.png" mode="widthFix"></image>
         </view>
         <view class="text">
             <view class="num">3.</view>
